@@ -1,2 +1,7 @@
 # Adaptive-Grayscale-CSI-Blue-Noise-Patterns
-Simulation codes for "Adaptive Grayscale Compressive Spectral Imaging Using Optimal Blue Noise Coding Patterns"
+
+### Authors:
+* Carlos Hinojosa (Websites http://carlosh93.github.io, http://hdspgroup.com/)
+* Nelson Diaz (Website http://hdspgroup.com/)
+* Henry Arguello (Website http://hdspgroup.com/)
+
