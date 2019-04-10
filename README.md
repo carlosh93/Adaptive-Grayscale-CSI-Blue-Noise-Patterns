@@ -3,7 +3,7 @@
 #### Authors:
 * [Carlos Hinojosa](http://carlosh93.github.io)
 * [Nelson Diaz](http://hdspgroup.com/)
-* Henry Arguello (Website http://hdspgroup.com/)
+* [Henry Arguello](http://hdspgroup.com/)
 
 **Journal:** ELSEVIER, Optics and Laser Technology 
 
