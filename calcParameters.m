@@ -1,5 +1,4 @@
 function [] = calcParameters(dB,kind0,database)
-
 %calcParameters - Function to obtain the saturation parameters using in the
 %colored coded aperture generation.
 %

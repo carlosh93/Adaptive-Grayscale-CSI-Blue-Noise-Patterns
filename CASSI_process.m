@@ -1,4 +1,37 @@
 function [result,time] = CASSI_process(shots, kind, tau,Ori,M,N,L,adapt,dB)
+%CASSI_process - Main function that perform the sensing process and
+%reconstruction of the underlying spectral image from C-CASSI compressive
+%measurements
+%
+% Syntax:  [result,time] = CASSI_process(shots, kind, tau,Ori,M,N,L,adapt,dB)
+%
+% Inputs:
+%    shots - Number of measurement shots to be acquired
+%    kind - Type of coded aperture to be generated
+%    tau - Regularization parameter in the reconstruction
+%    Ori - Spectral image data
+%    M - Spatial Dimension
+%    N - Spatial Dimension
+%    L - Spectral Dimension
+%    adapt - flag to determine if adaptive or not-adaptive
+%    dB - Database number
+%
+% Outputs:
+%    result - Result of CSI reconstruction
+%    time - Total time to accomplish the complete reconstruction.
+%
+% Other m-files required: multishot.m
+% MAT-files required: none
+%
+% See also: Run_complete.m,  exeOpt.m
+% Author: Carlos Hinojosa, Nelson Diaz and Henry Arguello
+% Universidad Industrial de Santander
+% High Dimensional Signal Processing Group (HDSP)
+% Research Group Website: http://hdspgroup.com
+% Corresponding Author Email: nelson.diaz@saber.uis.edu.co
+% Author Website: http://carlosh93.github.io
+% April 9 2019; Last revision: 10-Apr-2019
+%------------- BEGIN CODE --------------
 load([kind, '_L=', num2str(L), '_K=', num2str(shots)]);
     if(dB == 1 | dB == 2 | dB == 3)
         
@@ -102,3 +135,4 @@ factor = 1;
 result = imresize(result,factor,'bilinear');
 time=toc;                                   % Timer stop
 
+%------------- END CODE --------------

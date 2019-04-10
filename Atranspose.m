@@ -23,7 +23,7 @@ H1 = [];
 H1 = [H1; H*D'];
 
 [R1,R2,R3] = find(H1);
-Img=[]; Img{1}=R1; Img{2}=R2; Img{3}=R3;    
+Img=[]; Img{1}=R1; Img{2}=R2; Img{3}=R3;
 
 %% Compact
 [M1,L2]=sort(R1);

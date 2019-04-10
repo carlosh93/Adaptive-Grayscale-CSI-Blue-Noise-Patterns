@@ -25,7 +25,7 @@
 % Research Group Website: http://hdspgroup.com
 % Corresponding Author Email: nelson.diaz@saber.uis.edu.co
 % Author Website: http://carlosh93.github.io
-% April 9 2019; Last revision: 8-Apr-2019
+% April 9 2019; Last revision: 10-Apr-2019
 %
 %------------- BEGIN CODE --------------
 

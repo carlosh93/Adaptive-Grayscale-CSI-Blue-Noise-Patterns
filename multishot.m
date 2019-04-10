@@ -1,6 +1,33 @@
-function y2=multishot(N,H_dmd,H,H1,gdmd,hyperimg,shift)
+function [y2]=multishot(N,H_dmd,H,H1,gdmd,hyperimg,shift)
+%multishot - Function that simulates the C-CASSI sensing process.
+%
+% Syntax:  [y2] = multishot(N,H_dmd,H,H1,gdmd,hyperimg,shift)
+%
+% Inputs:
+%    N - Spatial Dimensions of the spectral image (NxNxH)
+%    H_dmd - 3rd Dimension of the dmd
+%    H - Spectral dimension of the image
+%    H1 - H/H_dmd
+%    gdmd - 3D coded aperture
+%    hyperimg - spectral image data
+%    shift - spatial shifting of prism dispersion
+% Outputs:
+%    y2 - Compressive measurements
+%
+% Other m-files required: CASSI_process.m, fun_PSNR.m
+%
+% See also: CASSI_process.m,  fun_PSNR.m, multishot.m
+% Author: Carlos Hinojosa, Nelson Diaz and Henry Arguello
+% Universidad Industrial de Santander
+% High Dimensional Signal Processing Group (HDSP)
+% Research Group Website: http://hdspgroup.com
+% Corresponding Author Email: nelson.diaz@saber.uis.edu.co
+% Author Website: http://carlosh93.github.io
+% April 9 2019; Last revision: 8-Apr-2019
+%------------- BEGIN CODE --------------
+
+
 dmd = zeros(N,N,H_dmd);
-% tile the aperture plane with 10000
 
 dmd=gdmd;
 
@@ -20,13 +47,6 @@ else
     end
 end
 
-
-% measurement
-%dimg = dimg;
-
-%% reconstruction part
-% 1) reorganize the measurement
-
 rdimg = zeros(N,N+H-1,H_dmd);
 
 y = zeros(N,N+shift*(H1-1),H_dmd);
@@ -43,4 +63,6 @@ for i = 1:H_dmd,
     y(:,:,i) = rdimg(:,i:N+H-1-(H_dmd-i),i);
 end
 
-y2 = y(:,:,1);%y(:,:,i) is for the i-th group
+y2 = y(:,:,1);
+
+%------------- END CODE --------------

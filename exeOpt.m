@@ -1,6 +1,4 @@
-
 function [] = exeOpt(C,dB,kind0)
-
 %exeOpt - Function that perform the CSI acquisition and reconstruction (see function
 %CASSI_process.m) using the designed coded apertures.
 %
@@ -20,7 +18,7 @@ function [] = exeOpt(C,dB,kind0)
 % Research Group Website: http://hdspgroup.com
 % Corresponding Author Email: nelson.diaz@saber.uis.edu.co
 % Author Website: http://carlosh93.github.io
-% April 9 2019; Last revision: 8-Apr-2019
+% April 9 2019; Last revision: 10-Apr-2019
 %------------- BEGIN CODE --------------
 
 shots = [2 3 4 5 6 7 8];                  % Number of shots to be captured
@@ -73,7 +71,7 @@ elseif(length(database{1})==length('beads_ms') && unique(database{1} == 'beads_m
     %% Load fullflor
 elseif(length(database{1})==length('fullflor') && unique(database{1} == 'fullflor'))
     load(database{1});
-    hyperimg = Ori;;
+    hyperimg = Ori;
     if(kind0 == 0)
         kind = {'random_M=128_N=128'};   % random_superballs_ms
     elseif(kind0 == 1)
@@ -97,7 +95,7 @@ for v=1:8
     Ori = Ori(:,:,ind)*C(v);
     [M,N,L]=size(Ori);
     for m=1:length(shots)
-        psnr2=[];  
+        psnr2=[];
         temporal = 0;
         iv=0.01;
         fv=30;
@@ -108,7 +106,7 @@ for v=1:8
         tauhistory=[];
         tauhistory=[tauhistory tau];
         for p=1:4
-            psnr1=[]; 
+            psnr1=[];
             for k=1:length(kind)
                 for t=1:length(tau)
                     psnrRep =[];
